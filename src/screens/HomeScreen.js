@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -148,7 +148,7 @@ const HomeScreen = ({navigation}) => {
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={styles.vehiclesContainer}>
-              {/* Ocean Freight */}
+
               <TouchableOpacity style={[styles.vehicleCard]}>
                 <Text style={styles.vehicleTitle}>Ocean freight</Text>
                 <Text style={styles.vehicleSubtitle}>International</Text>
@@ -448,24 +448,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: 'auto',
   },
-  // headerSection: {
-  //   width: width,
-  //   height: 100,
-  //   backgroundColor: PRIMARY_COLOR,
-  //   padding: 10,
-  // },
-  // headerTop: {
-  //   flex: 1,
-  //   flexDirection: 'row',
-  // },
-  // profilePicture: {
-  //   width: 50,
-  //   height: 50,
-  // },
-  // headerInfoBox: {
-  //   flex: 1,
-  //   flexDirection: 'column',
-  // },
 });
 
 export default HomeScreen;

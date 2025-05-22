@@ -8,27 +8,26 @@ import {
   View,
   Dimensions,
 } from 'react-native';
-import {PRIMARY_COLOR, WHITE_COLOR} from '../config/constants';
+import {PRIMARY_COLOR, SECONDARY_COLOR, WHITE_COLOR} from '../config/constants';
 import changeNavigationBarColor from "react-native-navigation-bar-color";
-//import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 const {width, height} = Dimensions.get('window');
 
 const SplashScreen = () => {
   useEffect(() => {
     // Change the bottom nav bar color to black with light icons
-    changeNavigationBarColor(PRIMARY_COLOR, true);
+    changeNavigationBarColor(WHITE_COLOR, true);
   }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
-        backgroundColor={PRIMARY_COLOR}
-        barStyle={'light-content'}
+        backgroundColor={WHITE_COLOR}
+        barStyle={'dark-content'}
         translucent={false}
       />
       <View style={styles.body}>
-        <Image source={require('../assets/logo.png')} />
+        <Image source={require('../assets/logo.png')} style={styles.splashIcon} />
       </View>
     </SafeAreaView>
   );
@@ -38,19 +37,20 @@ const styles = StyleSheet.create({
   container: {
     height: height,
     width: width,
-    justifyContent: 'center', // Center vertically
-    alignItems: 'center', // Center horizontally
-    backgroundColor: PRIMARY_COLOR,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: WHITE_COLOR,
   },
   body: {
     height: height,
     width: width,
-    justifyContent: 'center', // Center vertically
-    alignItems: 'center', // Center horizontally
-    backgroundColor: PRIMARY_COLOR,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: WHITE_COLOR,
   },
-  text: {
-    color: '#ff0000',
+  splashIcon: {
+    width: 100,
+    height: 100,
   },
 });
 

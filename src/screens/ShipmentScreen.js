@@ -4,7 +4,6 @@ import {
   StyleSheet,
   SafeAreaView,
   Text,
-  Dimensions,
   TouchableOpacity,
   Image,
   ScrollView,
@@ -12,15 +11,9 @@ import {
 } from 'react-native';
 import {
   PRIMARY_COLOR,
-  PRIMARY_TEXT_COLOR,
-  SECONDARY_TEXT_COLOR,
-  WHITE_COLOR,
 } from '../config/constants';
-import {Appbar, TextInput} from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-
-const {width, height} = Dimensions.get('window');
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const shipmentData = [
   {
@@ -135,16 +128,10 @@ const ShipmentScreen = ({navigation}) => {
           Your delivery, {item.trackingNumber}
           {'\n'}from {item.origin}, is arriving today!
         </Text>
-        {item.status !== 'loading' ? (
-          <View style={styles.priceRow}>
-            <Text style={styles.priceText}>{item.price}</Text>
-            <Text style={styles.dateText}> · {item.date}</Text>
-          </View>
-        ) : (
-          <View style={styles.loadingIndicator}>
-            <Text>Loading...</Text>
-          </View>
-        )}
+        <View style={styles.priceRow}>
+          <Text style={styles.priceText}>{item.price}</Text>
+          <Text style={styles.dateText}> · {item.date}</Text>
+        </View>
         <View style={styles.packageIconContainer}>
           <Image
             source={require('../assets/box.png')}
@@ -159,7 +146,9 @@ const ShipmentScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back" size={24} color="#fff" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Shipment history</Text>
@@ -231,13 +220,13 @@ const ShipmentScreen = ({navigation}) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-              style={[styles.tab, activeTab === 'Cancelled' && styles.activeTab]}
-              onPress={() => setActiveTab('Cancelled')}>
+            style={[styles.tab, activeTab === 'Cancelled' && styles.activeTab]}
+            onPress={() => setActiveTab('Cancelled')}>
             <Text
-                style={[
-                  styles.tabText,
-                  activeTab === 'Cancelled' && styles.activeTabText,
-                ]}>
+              style={[
+                styles.tabText,
+                activeTab === 'Cancelled' && styles.activeTabText,
+              ]}>
               Cancelled
             </Text>
             <View style={styles.countBadge}>

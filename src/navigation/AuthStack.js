@@ -2,7 +2,6 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import {PRIMARY_COLOR} from '../config/constants';
-import AppStack from './AppStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,15 +15,6 @@ const AuthStack = () => {
           navigationBarColor: PRIMARY_COLOR,
         }}
       />
-      {/*<Stack.Screen*/}
-      {/*  name="AddYourPhotoScreen"*/}
-      {/*  component={AddYourPhotoScreen}*/}
-      {/*  options={{*/}
-      {/*    statusBarBackgroundColor: WHITE_COLOR,*/}
-      {/*    statusBarStyle: 'dark',*/}
-      {/*    navigationBarColor: WHITE_COLOR,*/}
-      {/*  }}*/}
-      {/*/>*/}
     </Stack.Navigator>
   );
 };

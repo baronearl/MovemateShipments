@@ -83,7 +83,6 @@ const SearchPackageScreen = ({navigation}) => {
 
   const handleItemPress = item => {
     Alert.alert(`Name: ${item.name}`, `Tracking Number: ${item.trackingNumber} • Origin: ${item.origin} → Destination: ${item.destination}`);
-    // or navigate, update state, etc.
   };
 
   const renderPackageItem = ({item}) => (

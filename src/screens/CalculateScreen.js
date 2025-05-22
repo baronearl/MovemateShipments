@@ -7,7 +7,6 @@ import {
   SafeAreaView,
   StatusBar,
   TextInput,
-  Image,
   ScrollView,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
